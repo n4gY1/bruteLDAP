@@ -13,19 +13,20 @@ Usage: BruteLDAP.exe -U 'c:\users\userlist.txt' -P 'c:\users\passlist.txt' -L 'L
 
 -U Userlist: username list file"
 
--P PasswordList: password list file (default max $C probe per user)" 
+-P PasswordList: password list file (default max $C probe per user)"
 
 -L LDAPRootPath: Domain LDAP link ('LDAP://domain.local')"
 
-[OPTIONAL SETTINGS]
 
+
+[OPTIONAL SETTINGS]
 
 -C Password number probe per user (default is 5)"
 
-   Warning, default ActiveDirectory bad password lockout settings is 7"
+Warning, default ActiveDirectory bad password lockout settings is 7
    
    
    
 **********************************************************************
-SUCCESS connection values save in the random geneartion name txt
+SUCCESS connection values save in the random generation name .txt
 **********************************************************************
