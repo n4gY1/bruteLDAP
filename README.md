@@ -20,7 +20,7 @@ Usage: BruteLDAP.exe -U 'c:\users\userlist.txt' -P 'c:\users\passlist.txt' -L 'L
 [OPTIONAL SETTINGS]
 
 
--C Password number probe per user (default is $C)"
+-C Password number probe per user (default is 5)"
 
    Warning, default ActiveDirectory bad password lockout settings is 7"
    
