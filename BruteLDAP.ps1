@@ -1,4 +1,5 @@
 ﻿param($U,$P,$L,$C=5)
+$logpath = (New-Guid).Guid.replace("-","").substring(0,14) + ".txt"
 
 $banner = @"
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
@@ -88,6 +89,7 @@ function Check-LDAP {
 
         Write-Host "[+]" -ForegroundColor Green -NoNewline
         Write-Host " SUCCESS connected $UserName - $UserPassword"
+        "[+] $username : $UserPassword" | Out-File $logpath -Append
         $Domain.Close()
     }
     catch {
@@ -117,8 +119,8 @@ Read-Host "I am finish"
 # SIG # Begin signature block
 # MIIFlAYJKoZIhvcNAQcCoIIFhTCCBYECAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUT+cOrcgOEc+ROPGGNt3r+4I7
-# 2HugggMiMIIDHjCCAgagAwIBAgIQewxi07IMqq5FFU5/SWDdKzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUdowZLxeKpWpD3lO0GcGwU8gq
+# HQKgggMiMIIDHjCCAgagAwIBAgIQewxi07IMqq5FFU5/SWDdKzANBgkqhkiG9w0B
 # AQsFADAnMSUwIwYDVQQDDBxQb3dlclNoZWxsIENvZGUgU2lnbmluZyBDZXJ0MB4X
 # DTIyMTAyMTA4MDIxOVoXDTIzMTAyMTA4MjIxOVowJzElMCMGA1UEAwwcUG93ZXJT
 # aGVsbCBDb2RlIFNpZ25pbmcgQ2VydDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
@@ -138,11 +140,11 @@ Read-Host "I am finish"
 # AgEBMDswJzElMCMGA1UEAwwcUG93ZXJTaGVsbCBDb2RlIFNpZ25pbmcgQ2VydAIQ
 # ewxi07IMqq5FFU5/SWDdKzAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAig
 # AoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgEL
-# MQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUPNHJJu2UgBTvaHqnq0BC
-# wXOXSu0wDQYJKoZIhvcNAQEBBQAEggEAL+8Ob8TL5VtLxrZnI94sqSAGhH8KSQPS
-# iXW7VQW55NRIz1wqJ56u0WglylA3si6jHc0eMZgg6PffiYrnDZ7LfxxtkRFq72tE
-# sahTYRfyNhRFs+qONwXOVVsbabVpjpwdnJqJGMGesgSniQGZEp3+wQ76AiYGJ5rG
-# 0V8e2OMSZhI0e+0kdINmH9yObvJZJBR1xQgfNFZdud0xX5R4A2Iyt7/XuSbRtQlf
-# mPrQykGaHW//Vhl+zpEGPwqYGPicZNpvG/F1h8EdfUAeLQHXz/bOxmJAQwaI6AXA
-# QkztdHN62aO4SegYjsELsv/ORFhRaP+PfEWd9pnnRAggJBuH5y1VCw==
+# MQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU0kioAgHnQbAyEXpYp6Rv
+# 659LIaMwDQYJKoZIhvcNAQEBBQAEggEAJJwDPV9oCyHgzE7MTBuqqoXizSdq8lmG
+# TmzqDmTm8Wpmd/2Bxh150yqZ0s5HwhJts5zW07hHoy1WrJ5INUWHBzzZj9VCFbNG
+# Ax6Ea/tooqqrDcmX2V22DXMe41cIqHr06Lbde3HfQAG4ZWkRWTXhAEpjD0K7Yn6R
+# WzTiifY5ZUA0hFnEqXDl51+29RZvHw5NkpuVnL6R5zlsmoxmovLHaa45v3izvlvJ
+# r8c6oJQFTa/kcyJi/r7+DJllPxGhSEFu8+LX7QsZwt52FnEAzKfnz+oR91AVS9qh
+# /ic3NlLQmp4F96ZspBlSu6XNRjUlc8+67hF9c14wcuyZEAURhALduQ==
 # SIG # End signature block
