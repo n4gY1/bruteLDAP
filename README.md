@@ -4,7 +4,7 @@ Check LDAP connection with username and password list
 
 #######################################################################
 
-Usage: BruteLDAP.exe -U 'c:\users\userlist.txt' -P 'c:\users\passlist.txt' -L 'LDAP://domain.local'" -ForegroundColor Yellow
+Usage: BruteLDAP.exe -U 'c:\users\userlist.txt' -P 'c:\users\passlist.txt' -L 'LDAP://domain.local'" 
 
 #######################################################################
 
